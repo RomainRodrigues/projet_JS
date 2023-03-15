@@ -18,7 +18,7 @@ class Country {
         this._gentile = pays.denonym
         this._drapeau = pays.flag
         this._population = pays.population
-        this._TLD = pays.topLevelDomain
+        this._TLD = pays.topLevelDomain ? pays.topLevelDomain : []
         this._codeMonnaie = pays.currencies ? pays.currencies.map(element => element.code) : []
         this._languages = pays.languages ? pays.languages.map(element => element.name) : []
     }
@@ -30,6 +30,10 @@ class Country {
             return "Nom : " + this.nomAnglais + ", la capitale est : " + this.capitale
         }
         
+    }
+
+    get TLD(){
+        return this._TLD
     }
 
     get nomAnglais() {
@@ -53,7 +57,11 @@ class Country {
     }
 
     get getPopDensity() {
-        return this._population / this._superficie
+        if(!this._superficie){
+            return -1
+        } else {
+            return this._population / this._superficie
+        }
     }
 
     get continent(){

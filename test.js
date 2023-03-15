@@ -117,7 +117,7 @@ function withCommonLanguage() {
     return res 
 }
 
-//console.log(withCommonLanguage())
+// console.log(withCommonLanguage())
 
 function withoutCommonCurrency() {
     let res = []
@@ -131,25 +131,28 @@ function withoutCommonCurrency() {
                 compteur++
             }
         }
-        if(compteur>0){
+        if(compteur===0){
             res.push(pays)
         }
     }
     return res
 }
 
-//console.log(withoutCommonCurrency())
+// console.log(withoutCommonCurrency())
 
+function sortingDecreasingDensity(){
+    const keys = Object.keys(Country.all_countries).sort((a,b) => {
+        return Country.all_countries[b].getPopDensity - Country.all_countries[a].getPopDensity
+    })
 
-function triRapideDecroissant() {
-
-    
+    return keys.map(e => Country.all_countries[e])
 }
 
-function sortingDecreasingDensity() {
-    let res = []
-    let all_countries = Country.all_countries
-    for(const key in Country.all_countries) {
-        
-    }
+// console.log(sortingDecreasingDensity())
+
+function moreTopLevelDomains(){
+    return Object.keys(Country.all_countries).map(e => Country.all_countries[e]).filter(elem => elem.TLD.length > 1)
 }
+
+console.log(moreTopLevelDomains())
+
