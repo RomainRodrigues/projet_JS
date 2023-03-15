@@ -56,12 +56,24 @@ class Country {
         return this._languages
     }
 
+    get population(){
+        return this._population
+    }
+
+    get superficie(){
+        return this._superficie
+    }
+
     get getPopDensity() {
         if(!this._superficie){
             return -1
         } else {
             return this._population / this._superficie
         }
+    }
+
+    get drapeau(){
+        return this._drapeau
     }
 
     get continent(){
