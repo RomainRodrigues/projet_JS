@@ -154,5 +154,32 @@ function moreTopLevelDomains(){
     return Object.keys(Country.all_countries).map(e => Country.all_countries[e]).filter(elem => elem.TLD.length > 1)
 }
 
-console.log(moreTopLevelDomains())
+// console.log(moreTopLevelDomains())
 
+function veryLongTrip(nom_pays,liste=[]) {
+    
+    let codePays;
+    for(let unPays of Object.keys(Country.all_countries).map(elem => Country.all_countries[elem])){
+        if(unPays.nomAnglais == nom_pays){
+            codePays = unPays.alpha3code
+            break
+        }
+        
+    }
+
+    let pays = Country.all_countries[codePays]
+    
+    for(let paysFronts of pays.paysFrontaliers){
+        let paysFronta = Country.all_countries[paysFronts]
+        
+        if(!liste.includes(paysFronta)){
+            liste.push(paysFronta)
+            veryLongTrip(paysFronta.nomAnglais,liste)
+        } else {
+            console.log("Pays déjà visité")
+        }
+    }
+    return liste
+}
+
+console.log(veryLongTrip("France"))
