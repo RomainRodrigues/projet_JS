@@ -83,7 +83,7 @@ function moreLanguages() {
     return res
 }
 
-//console.log(moreLanguages())
+// console.log(moreLanguages())
 
 function withCommonLanguage() {
     let res = []
@@ -182,4 +182,4 @@ function veryLongTrip(nom_pays,liste=[]) {
     return liste
 }
 
-console.log(veryLongTrip("France"))
+// console.log(veryLongTrip("France"))

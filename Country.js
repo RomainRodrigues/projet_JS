@@ -40,6 +40,10 @@ class Country {
         return this._name.anglais
     }
 
+    get nomFrancais() {
+        return this._name.français
+    }
+
     get capitale() {
         return this._capitale
     }
