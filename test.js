@@ -185,4 +185,3 @@ function veryLongTrip(nom_pays,liste=[]) {
 
 
 // console.log(veryLongTrip("France"))
-console.log("Test git")
