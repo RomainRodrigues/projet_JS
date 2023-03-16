@@ -1,0 +1,54 @@
+body{
+    font-family: Arial;
+}
+.overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity .4s;
+    visibility: hidden;
+    opacity: 0;
+}
+.overlay:target{
+    visibility: visible;
+    opacity: 1;
+}
+.popup{
+    margin: 6rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 5px;
+    width: 45%;
+    position: relative;
+    transition: all 0.4s ease-in-out;
+}
+.popup .cross{
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease;
+    color: #333;
+}
+.popup .cross:hover{
+    color: #12fcf8;
+}
+.myButton {
+    margin-top: 1rem;
+	box-shadow: 0px 10px 14px -7px #276873;
+	background-color:#599bb3;
+    border-radius: 5px;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:20px;
+	padding:13px 32px;
+	text-shadow:0px 1px 0px #3d768a;
+}
+.myButton:hover {
+	background-color:#408c99;
+}
