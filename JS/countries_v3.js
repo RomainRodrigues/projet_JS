@@ -81,10 +81,14 @@ function chargeDonnees(){
         const div2 = document.createElement("div")
         div2.classList.add('popup')
         
+        const titre = document.createElement("h2")
+        titre.textContent = pays.nomFrancais
+
         const content = document.createElement("p")
-        content.textContent = pays.nomFrancais
+        content.innerHTML = pays.toString()
 
         div2.appendChild(a_popup)
+        div2.appendChild(titre)
         div2.appendChild(content)
         div1.appendChild(div2)
         div_popup.appendChild(div1)

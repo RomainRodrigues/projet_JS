@@ -40,13 +40,13 @@ class Country {
 
 
         if(this.capitale == "") {
-            return "Nom : " + this.nomAnglais + "\nPopulation : " + this.population + "\nSuperficie : " + this.superficie + " km²\n" +
-            "Densité : " + this.getPopDensity + "\nContinent : " + this._continent + "\nPays frontaliers : " + listePaysFronta + "\nAppelation habitant : " + this._gentile +
-            "\nTop Level Domains : " + listeTLD + "\nMonnaies : " + listeMonnaie + "\nLangues parlées : " + listeLangue
+            return "Nom : " + this.nomAnglais +"</br>Population : " + this.population + "</br>Superficie : " + this.superficie + " km²</br>" +
+            "Densité : " + this.getPopDensity + "</br>Continent : " + this._continent + "</br>Pays frontaliers : " + listePaysFronta + "</br>Appelation habitant : " + this._gentile +
+            "</br>Top Level Domains : " + listeTLD + "</br>Monnaies : " + listeMonnaie + "</br>Langues parlées : " + listeLangue
         } else {
-            return "Nom : " + this.nomAnglais + "\nCapitale : " + this.capitale + "\nPopulation : " + this.population + "\nSuperficie : " + this.superficie + " km²\n" +
-            "Densité : " + this.getPopDensity + "\nContinent : " + this._continent + "\nPays frontaliers : " + listePaysFronta + "\nAppelation habitant : " + this._gentile +
-            "\nTop Level Domains : " + listeTLD + "\nMonnaies : " + listeMonnaie + "\nLangues parlées : " + listeLangue
+            return "Nom : " + this.nomAnglais + "</br>Capitale : " + this.capitale + "</br>Population : " + this.population + "</br>Superficie : " + this.superficie + " km²</br>" +
+            "Densité : " + this.getPopDensity + "</br>Continent : " + this._continent + "</br>Pays frontaliers : " + listePaysFronta + "</br>Appelation habitant : " + this._gentile +
+            "</br>Top Level Domains : " + listeTLD + "</br>Monnaies : " + listeMonnaie + "</br>Langues parlées : " + listeLangue
         }
         
     }
