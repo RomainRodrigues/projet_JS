@@ -182,4 +182,6 @@ function veryLongTrip(nom_pays,liste=[]) {
     return liste
 }
 
+
+
 // console.log(veryLongTrip("France"))
