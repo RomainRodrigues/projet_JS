@@ -4,6 +4,7 @@ const div_popup = document.getElementById("div_popup")
 let start = 0
 let end = 24
 let nb_popup = 1
+let nb_popup_drapeau = 1
 
 const data_pays = Object.values(Country.all_countries)
 
@@ -16,10 +17,17 @@ function chargeDonnees(){
     for(const pays of pays_affiche){
         const tr = document.createElement("tr")
 
+        //popup détails
         const a = document.createElement("a")
         const href = document.createAttribute("href")
         href.value = '#popup'+nb_popup.toString()
         a.setAttributeNode(href)
+
+        //popup drapeau
+        const a_drapeau = document.createElement("a")
+        const href_drapeau = document.createAttribute("href")
+        href_drapeau.value = '#popup_drapeau'+nb_popup_drapeau.toString()
+        a_drapeau.setAttributeNode(href_drapeau)
 
         const tdNom = document.createElement("td")
         tdNom.textContent = pays.nomFrancais
@@ -41,7 +49,8 @@ function chargeDonnees(){
         const attribut = document.createAttribute("src")
         attribut.value = pays.drapeau
         image.setAttributeNode(attribut)
-        tdDrapeau.appendChild(image)
+        a_drapeau.appendChild(image)
+        tdDrapeau.appendChild(a_drapeau)
 
         tr.appendChild(tdNom)
         tr.appendChild(tdPop)
@@ -57,7 +66,7 @@ function chargeDonnees(){
 
         tableauBody.appendChild(tr)
 
-        // popup
+        // popup pays
         const a_popup = document.createElement("a")
         const href_popup = document.createAttribute("href")
         href_popup.value = '#'
@@ -81,8 +90,36 @@ function chargeDonnees(){
         div_popup.appendChild(div1)
 
         nb_popup++
+
+        // popup drapeau
+        const a_popup_drapeau = document.createElement("a")
+        const href_popup_drapeau = document.createAttribute("href")
+        href_popup_drapeau.value = '#'
+        a_popup_drapeau.setAttributeNode(href_popup_drapeau)
+        a_popup_drapeau.innerHTML = '&times;'
+        a_popup_drapeau.classList.add('cross')
+
+        const div1_drapeau = document.createElement("div")
+        div1_drapeau.id = 'popup_drapeau'+nb_popup_drapeau.toString()
+        div1_drapeau.classList.add('overlay')
+
+        const div2_drapeau = document.createElement("div")
+        div2_drapeau.classList.add('popup', 'popup_drapeau')
+        
+        const content_drapeau = document.createElement("img")
+        content_drapeau.src = pays.drapeau
+        content_drapeau.classList.add('img_detail')
+
+        div2_drapeau.appendChild(a_popup_drapeau)
+        div2_drapeau.appendChild(content_drapeau)
+        div1_drapeau.appendChild(div2_drapeau)
+        div_popup.appendChild(div1_drapeau)
+
+        nb_popup++
+        nb_popup_drapeau++
     }
     nb_popup = 1
+    nb_popup_drapeau = 1
 }
 
 chargeDonnees(pays_affiche)//Au chargement

@@ -52,3 +52,11 @@ body{
 .myButton:hover {
 	background-color:#408c99;
 }
+.img_detail{
+    border: 1px solid grey;
+    width: 90%;
+    height: auto;
+}
+.popup_drapeau{
+    text-align: center;
+}
