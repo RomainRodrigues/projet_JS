@@ -15,7 +15,7 @@ class Country {
         this._paysFrontaliers = pays.borders ? pays.borders : []
         this._capitale = pays.capital ? pays.capital : ""
         this._continent = pays.region
-        this._gentile = pays.denonym
+        this._gentile = pays.demonym
         this._drapeau = pays.flag
         this._population = pays.population
         this._TLD = pays.topLevelDomain ? pays.topLevelDomain : []
@@ -24,10 +24,29 @@ class Country {
     }
 
     toString() {
+        let listePaysFronta = ""
+        let listeTLD = ""
+        let listeMonnaie = ""
+        let listeLangue = ""
+        this._paysFrontaliers.forEach(element => listePaysFronta+= Country.all_countries[element].nomFrancais + ", ")
+        this._TLD.forEach(element => listeTLD+= element + ", ")
+        this._codeMonnaie.forEach(element => listeMonnaie+= Currency.all_currencies[element].nom + ", ")
+        this._languages.forEach(element => listeLangue+= Language.all_languages[element]._nom + ", ")
+        //Enlève les deux derniers caractères à la fin de la chaîne de caractère pour éviter d'afficher la virgule.
+        listePaysFronta = listePaysFronta.substring(0, listePaysFronta.length - 2)
+        listeTLD = listeTLD.substring(0, listeTLD.length - 2)
+        listeMonnaie = listeMonnaie.substring(0, listeMonnaie.length - 2)
+        listeLangue = listeLangue.substring(0, listeLangue.length - 2)
+
+
         if(this.capitale == "") {
-            return "Nom : " + this.nomAnglais
+            return "Nom : " + this.nomAnglais + "\nPopulation : " + this.population + "\nSuperficie : " + this.superficie + " km²\n" +
+            "Densité : " + this.getPopDensity + "\nContinent : " + this._continent + "\nPays frontaliers : " + listePaysFronta + "\nAppelation habitant : " + this._gentile +
+            "\nTop Level Domains : " + listeTLD + "\nMonnaies : " + listeMonnaie + "\nLangues parlées : " + listeLangue
         } else {
-            return "Nom : " + this.nomAnglais + ", la capitale est : " + this.capitale
+            return "Nom : " + this.nomAnglais + "\nCapitale : " + this.capitale + "\nPopulation : " + this.population + "\nSuperficie : " + this.superficie + " km²\n" +
+            "Densité : " + this.getPopDensity + "\nContinent : " + this._continent + "\nPays frontaliers : " + listePaysFronta + "\nAppelation habitant : " + this._gentile +
+            "\nTop Level Domains : " + listeTLD + "\nMonnaies : " + listeMonnaie + "\nLangues parlées : " + listeLangue
         }
         
     }
