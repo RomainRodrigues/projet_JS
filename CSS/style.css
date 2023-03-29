@@ -64,3 +64,12 @@ body{
 .popup_drapeau{
     text-align: center;
 }
+.filtre{
+    margin: 2rem;
+}
+.continent{
+    margin-bottom: 0.5rem;
+}
+.langue{
+    margin-bottom: 0.5rem;
+}
