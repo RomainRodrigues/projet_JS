@@ -1,4 +1,4 @@
-countries = [
+let countries = [
    {
       "name": "Afghanistan",
       "topLevelDomain": [
