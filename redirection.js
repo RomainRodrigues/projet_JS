@@ -10,6 +10,9 @@ function goToV3(){
 function goToV4(){
     document.location.href="./HTML/countries_v4.html";
 }
+function goToV5(){
+    document.location.href="./HTML/countries_v5.html";
+}
 function retour(){
     document.location.href="../index.html";
 }

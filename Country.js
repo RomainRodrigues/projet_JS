@@ -84,7 +84,7 @@ class Country {
     }
 
     get superficie(){
-        return this._superficie
+        return this._superficie ? this._superficie : -1
     }
 
     get getPopDensity() {

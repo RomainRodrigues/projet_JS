@@ -73,3 +73,7 @@ body{
 .langue{
     margin-bottom: 0.5rem;
 }
+.gras{
+    background-color: #12fcf8;
+    color: #000;
+}
