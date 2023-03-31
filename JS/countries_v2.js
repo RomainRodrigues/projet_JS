@@ -1,3 +1,5 @@
+Country.fill_db(countries)
+
 const tableauBody = document.getElementById("body")
 
 let start = 0

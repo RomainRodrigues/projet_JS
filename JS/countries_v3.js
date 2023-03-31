@@ -1,3 +1,5 @@
+Country.fill_db(countries)
+
 const tableauBody = document.getElementById("body")
 const div_popup = document.getElementById("div_popup")
 

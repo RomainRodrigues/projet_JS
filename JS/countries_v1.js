@@ -1,3 +1,5 @@
+Country.fill_db(countries)
+
 const tableauBody = document.getElementById("body")
 
 for(const key in Country.all_countries){
