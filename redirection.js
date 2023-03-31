@@ -13,6 +13,9 @@ function goToV4(){
 function goToV5(){
     document.location.href="./HTML/countries_v5.html";
 }
+function goToVFinal(){
+    document.location.href="./HTML/countries_final.html";
+}
 function retour(){
     document.location.href="../index.html";
 }

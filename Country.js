@@ -157,7 +157,6 @@ class Country {
 
 }
 
-Country.fill_db(countries)
 //Country.affichage_pays()
 //console.log(Country.all_countries["AFG"].getBorders())
 

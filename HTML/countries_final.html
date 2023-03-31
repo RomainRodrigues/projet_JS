@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body id="loader" class="loader">
+    <button onclick="retour()">Retour à l'accueil</button>
+    <div class="filtre">
+        <div class="continent">
+            <labels>Filtre Continent:</labels>
+
+            <select name="continents" id="continent-select" onchange="filtreContinent(value)">
+                <option value="">--Choisir un continent--</option>
+            </select>
+        </div>
+        <div class="langue">
+            <labels>Filtre Langue:</labels>
+
+            <select name="langues" id="langue-select" onchange="filtreLangue(value)">
+                <option value="">--Choisir une langue--</option>
+            </select>
+        </div>
+        <div class="pays">
+            <labels>Filtre Pays:</labels>
+
+            <input type="text" name="pays" id="pays-select" onkeyup="processChange(value)">
+        </div>
+    </div>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th id="nom">Nom</th>
+                <th id="pop">Population</th>
+                <th id="surface">Surface</th>
+                <th id="densite">Densité</th>
+                <th id="continent">Continent</th>
+                <th>Drapeau</th>
+            </tr>
+        </thead>
+        <tbody id="body">
+        </tbody>
+    </table>
+    <div>
+        <button id="precedent" onclick="page_precedente()"class="myButton">PREC</button>
+        <button id="suivant" onclick="page_suivante()"class="myButton">SUIV</button>
+    </div>
+    <div id="div_popup">
+
+    </div>
+
+    <script src="../JS/getCountries.js"></script>
+    <script src="../Currency.js"></script>
+    <script src="../Language.js"></script>
+    <script src="../Country.js"></script>
+    <script src="../JS/countries_final.js"></script>
+    <script src="../redirection.js"></script>
+
+</body>
+</html>
+
+<style>
+table{
+    width: 100%;
+}
+
+table,
+td {
+    border: 1px solid #333;
+}
+
+thead,
+tfoot {
+    background-color: #333;
+    color: #fff;
+}
+img{
+    width: 50px;
+    height: 30px;
+}
+td{
+    text-align: center;
+}
+tr:hover{
+    cursor: pointer;
+}
+</style>
