@@ -1,3 +1,5 @@
+Country.fill_db(countries)
+
 function outsideTheContinent(){
     let res = []
     for(const key in Country.all_countries) {
@@ -42,7 +44,7 @@ function moreNeighbors(){
     return res
 }
 
-//console.log(moreNeighbors())
+// console.log(moreNeighbors())
 
 function neighborless(){
     let res = []
@@ -55,7 +57,7 @@ function neighborless(){
     return res
 }
 
-//console.log(moreNeighbors())
+// console.log(neighborless())
 
 function moreLanguages() {
     let nbLangues = 0
