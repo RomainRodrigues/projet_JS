@@ -127,7 +127,7 @@ function filtreLangue(value) {
     chargeDonnees()
 }
 
-function debounce(func, timeout = 1000){
+function debounce(func, timeout = 500){
     let timer;
     return (...args) => {
         clearTimeout(timer);
@@ -156,7 +156,7 @@ function filtreInput(value){
     } else  if (current_pays !== '' && current_pays !== value){
         current_pays = value
         data_pays = all_countrie
-        data_pays = data_pays.filter((elem) => elem.nomFrancais === value || elem.nomAnglais === value)
+        data_pays = data_pays.filter((elem) => elem.nomFrancais.toLowerCase().includes(value.toLowerCase()) || elem.nomAnglais.toLowerCase().includes(value.toLowerCase()))
 
         if(current_continent && current_langue){
             filtreContinent(current_continent)
@@ -170,7 +170,7 @@ function filtreInput(value){
         }
     } else {
         current_pays = value
-        data_pays = data_pays.filter((elem) => elem.nomFrancais === value || elem.nomAnglais === value)
+        data_pays = data_pays.filter((elem) => elem.nomFrancais.toLowerCase().includes(value.toLowerCase()) || elem.nomAnglais.toLowerCase().includes(value.toLowerCase()))
         pays_affiche = data_pays.filter((elem,key) => key < 25)
     }
     chargeDonnees()
